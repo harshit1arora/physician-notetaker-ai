@@ -11,7 +11,7 @@ This project demonstrates a modular, extensible architecture suitable for integr
 
 ---
 
-## 🏗️ Architecture Diagram
+##  Architecture Diagram
 ```ascii
 [ Raw Transcript ]
        |
@@ -43,7 +43,7 @@ This project demonstrates a modular, extensible architecture suitable for integr
 
 ---
 
-## 🚀 Design Philosophy
+## Design Philosophy
 - **Modularity**: Each NLP task (NER, Sentiment, Summarization) is isolated in its own module with a standardized JSON interface.
 - **Auditability & Confidence**: Every AI-generated field is accompanied by a confidence score and source attribution (e.g., `rule-based` vs `model-inference`).
 - **Performance**: Heavy models are loaded once via a **Singleton Model Loader** and cached for the duration of the process.
@@ -80,7 +80,7 @@ python src/main.py --text "Patient reports fever and cough for 3 days."
 
 ---
 
-## 📊 Models Used
+## Models Used
 - **Summarization**: `sshleifer/distilbart-cnn-12-6` (Lightweight, ~300MB, optimized for inference)
 - **Zero-Shot Classification**: `facebook/bart-large-mnli` (Used for sentiment, intent, and fallback keyword detection)
 - **NER**: spaCy `en_core_web_sm` + Custom `EntityRuler` (Optimized for clinical terms)
@@ -88,7 +88,7 @@ python src/main.py --text "Patient reports fever and cough for 3 days."
 
 ---
 
-## 📝 Confidence & Auditability
+## Confidence & Auditability
 We prioritize transparency in AI decision-making. The `metadata` block in every output includes:
 - System version and timestamp.
 - Total processing time.
@@ -97,7 +97,7 @@ We prioritize transparency in AI decision-making. The `metadata` block in every 
 
 ---
 
-## 🧩 Extensibility
+## Extensibility
 The pipeline is designed for future clinical NLP tasks:
 - **FHIR/HL7 Compatibility**: JSON schemas are easily mappable to standard healthcare interoperability formats.
 - **Plug-and-Play Modules**: New analyzers (e.g., ICD-10 coding, Risk Adjustment) can be added by implementing a simple `.process()` interface.
@@ -105,7 +105,7 @@ The pipeline is designed for future clinical NLP tasks:
 
 ---
 
-## ⚠️ Limitations & Ethical Disclaimer
+## Limitations & Ethical Disclaimer
 - **Not a Diagnostic Tool**: This software is intended as a documentation assistant for licensed medical professionals. It does **not** provide medical advice or diagnosis.
 - **Offline Mode**: While models run locally, initial setup requires an internet connection to download pre-trained weights.
 - **Transcript Quality**: Accuracy is dependent on the quality and clarity of the input transcript.
